@@ -15,17 +15,11 @@
   <header>
     <div class="header-area">
       <div class="header-left">
-        <div class="header-logo">
-          nomonomo
-        </div>
+        <%= link_to 'nomonomo', "/", class: "header-logo" %>
       </div>
       <div class="header-right">
-        <div class="signin-text">
-          ログイン
-        </div>
-        <div class="signup-text">
-          新規登録
-        </div>
+        <%=  link_to 'ログイン', new_user_session_path, class: "signin-text" %>
+        <%=  link_to '新規登録', new_user_registration_path, class: "signup-text" %>
       </div>
     </div>
   </header>
