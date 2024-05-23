@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><a href="/">nomonomo</a></h1>
+
+          <div class="grid-6">
+            <%= link_to "ログイン", class: "post" %>
+            <%= link_to "新規登録", class: "post" %>
+          </div>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <p>
+        Copyright nomonomo 2024.
+      </p>
+    </footer>
   </body>
 </html>
