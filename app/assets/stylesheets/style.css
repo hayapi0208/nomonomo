@@ -51,7 +51,20 @@ header {
 
 .signup-text {
   font-size: 20px;
-  margin-left: 30px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-nickname {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.logout {
+  font-size: 20px;
+  margin-left: 50px;
   text-decoration: none;
   color: black;
 }

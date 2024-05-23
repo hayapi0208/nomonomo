@@ -1,7 +1,7 @@
 <div class="contents row">
   <div class="sign-up-box">
     <div class="sign-up-logo">
-      Sign up
+      新規登録
     </div>
   </div>
   <div class="container">
@@ -9,55 +9,55 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :"メールアドレス" %><br />
         <%= f.email_field :email %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :"パスワード" %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %>文字以上)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :"パスワード(確認用)" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%= f.label :nickname %><br />
+        <%= f.label :"ニックネーム(公開)" %><br />
         <%= f.text_field :nickname %>
       </div>
 
       <div class="field">
-        <%= f.label :name %><br />
+        <%= f.label :"名前(未公開)" %><br />
         <%= f.text_field :name %>
       </div>
       
       <div class="field">
-        <%= f.label :post_code %><br />
+        <%= f.label :"郵便番号" %><br />
         <%= f.text_field :post_code %>
       </div>
 
       <div class="field">
-        <%= f.label :prefecture_id %><br />
+        <%= f.label :"都道府県" %><br />
         <%= f.text_field :prefecture_id %>
       </div>
 
       <div class="field">
-        <%= f.label :address %><br />
+        <%= f.label :"住所" %><br />
         <%= f.text_area :address %>
       </div>
 
       <div class="field">
-        <%= f.label :telephone %><br />
+        <%= f.label :"電話番号" %><br />
         <%= f.text_field :telephone %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "新規登録" %>
       </div>
     <% end %>
   </div>
