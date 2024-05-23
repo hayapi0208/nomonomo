@@ -10,6 +10,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <body>
+  <div class="background">
   <header>
     <div class="header-area">
       <div class="header-left">
@@ -27,9 +29,7 @@
       </div>
     </div>
   </header>
-  <body>
     <%= yield %>
-  </body>
   <footer>
     <div class="footer-area">
       <div class="copyright-logo">
@@ -37,4 +37,6 @@
       </div>
     </div>
   </footer>
+  </div>
+  </body>
 </html>
