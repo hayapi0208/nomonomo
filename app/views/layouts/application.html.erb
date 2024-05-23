@@ -10,23 +10,31 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">nomonomo</a></h1>
-
-          <div class="grid-6">
-            <%= link_to "ログイン", class: "post" %>
-            <%= link_to "新規登録", class: "post" %>
-          </div>
+  <header>
+    <div class="header-area">
+      <div class="header-left">
+        <div class="header-logo">
+          nomonomo
         </div>
       </div>
-    </header>
+      <div class="header-right">
+        <div class="signin-text">
+          ログイン
+        </div>
+        <div class="signup-text">
+          新規登録
+        </div>
+      </div>
+    </div>
+  </header>
+  <body>
     <%= yield %>
-    <footer>
-      <p>
-        Copyright nomonomo 2024.
-      </p>
-    </footer>
   </body>
+  <footer>
+    <div class="footer-area">
+      <div class="copyright-logo">
+        ©copyright nomonomo 2024
+      </div>
+    </div>
+  </footer>
 </html>
