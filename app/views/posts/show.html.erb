@@ -1,0 +1,40 @@
+<div class="show-main">
+  <div class="show-inner">
+    <div class="show-area">
+      <div class="show-image-area">
+        <div class="post__image">
+          <% if @post.image.attached? %>
+            <%= image_tag @post.image.variant(resize: '1000x200') %>
+          <% end %>
+        </div>
+      </div>
+      <div class="show-main-area">
+        <div class="show-hedding">
+          <%= @post.created_at %>
+        </div>
+      </div>
+
+      <div show-main-middle>
+        <div class="show-hedding">
+          <%= @post.title %>
+        </div>
+
+        <div class="show-hedding">
+          <%= @post.user.nickname %>
+        </div>
+      </div>
+
+      <div class="show-hedding">
+        <%= @post.prefecture.name %>
+      </div>
+
+      <div class="show-hedding">
+        <%= @post.store %>
+      </div>
+
+      <div class="show-hedding">
+        <%= @post.text %>
+      </div>
+    </div>
+  </div>
+</div>

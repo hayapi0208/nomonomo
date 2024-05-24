@@ -12,28 +12,30 @@
 
     <%# 投稿欄 %>
     <div class="contents-area">
-    <% @posts.each do |post| %>
-      <div class="content-post">
-        <div class="content-high">
-          <div class="content-upload">
-            <%= post.created_at %>
+      <% @posts.each do |post| %>
+        <a href="<%= post_path(post.id) %>" class="content-post-link">
+          <div class="content-post">
+            <div class="content-high">
+              <div class="content-upload">
+                <%= post.created_at %>
+              </div>
+            </div>
+            <div class="content-middle">
+              <div class="content-title">
+                <%= post.title %>
+              </div>
+              <div class="content-place">
+                <%= post.prefecture.name %>
+              </div>
+            </div>
+            <div class="content-low">
+              <div class="content-text">
+                <%= post.text %>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="content-middle">
-          <div class="content-title">
-            <%= post.title %>
-          </div>
-          <div class="content-place">
-            <%= post.prefecture.name %>
-          </div>
-        </div>
-        <div class="content-low">
-          <div class="content-text">
-            <%= post.text %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+        </a>
+      <% end %>
       
       <div class="content-post">
         <div class="content-high">

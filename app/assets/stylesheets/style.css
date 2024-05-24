@@ -130,6 +130,12 @@ footer {
   overflow: visible;
 }
 
+.content-post-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .content-post {
   height: 30vh;
   margin-bottom: 20px;
