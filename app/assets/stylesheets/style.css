@@ -96,14 +96,18 @@ footer {
 /*******************************************
           indexメイン
 ********************************************/
-.main-area {
-  width: 100%;
-  /* height: 77vh; */
+.index-main {
+  height: calc(100vh - 23vh);
+  overflow: auto;
 }
 
-.main-field {
+.index-inner {
+  display: flex;
+  justify-content: center; 
+}
+
+.index-area {
   width: 60vw;
-  margin: 0 auto;
 }
 /******** 検索欄 ****************************/
 .search-area {
@@ -127,7 +131,6 @@ footer {
 .contents-area {
   height: 100%;
   padding: 15px 100px;
-  overflow: visible;
 }
 
 .content-post-link {
