@@ -157,33 +157,73 @@ footer {
   margin-left: 150px;
 }
 
+.content-low {
+  overflow: auto;
+}
+
 /*******************************************
           sign_up /sign_in メイン
 ********************************************/
-.sign-up-box{
-  display: flex;
-  justify-content: center;
+.sign-main {
+  height: calc(100vh - 23vh);
 }
 
-.sign-up-logo {
-  font-size: 25px;
-  font-weight: bold;
-  margin-right: 180px;
+.sign-inner {
+  display: flex;
+  justify-content: center; 
 }
 
-.sign-in-box{
-  display: flex;
-  justify-content: center;
+.sign-in-box {
+  margin-top: 50px;
 }
 
 .sign-in-logo {
   font-size: 25px;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.container {
+.sign-up-box {
+  margin-top: 5px;
+  overflow: auto;
+}
+
+.sign-up-logo {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.sign-up-field {
+  margin: 5px;
+}
+
+/*******************************************
+          新規投稿する画面
+********************************************/
+.new-main {
+  height: calc(100vh - 23vh);
+}
+
+.new-inner {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  justify-content: center;
+}
+
+.new-form-area {
+  margin-top: 50px;
+}
+
+.new-heading {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.field{
+  margin: 10px 0;
+}
+
+.form__text {
+  width: 90%;
 }

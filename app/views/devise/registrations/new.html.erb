@@ -1,64 +1,67 @@
-<div class="contents row">
-  <div class="sign-up-box">
-    <div class="sign-up-logo">
-      新規登録
+<div class="sign-main">
+  <div class="sign-inner">
+    <div class="sign-up-box">
+      <div class="sign-up-logo">
+        新規登録
+      </div>
+    
+      <div class="container">
+      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="sign-up-field">
+          <%= f.label :"メールアドレス" %><br />
+          <%= f.email_field :email %>
+        </div>
+
+        <div class="sign-up-field">
+          <%= f.label :"パスワード" %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %>文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="sign-up-field">
+          <%= f.label :"パスワード(確認用)" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="sign-up-field">
+          <%= f.label :"ニックネーム(公開)" %><br />
+          <%= f.text_field :nickname %>
+        </div>
+
+        <div class="sign-up-field">
+          <%= f.label :"名前(未公開)" %><br />
+          <%= f.text_field :name %>
+        </div>
+        
+        <div class="sign-up-field">
+          <%= f.label :"郵便番号" %><br />
+          <%= f.text_field :post_code %>
+        </div>
+
+        <div class="sign-up-field">
+          <%= f.label :"都道府県" %><br />
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {}) %>
+        </div>
+
+        <div class="sign-up-field">
+          <%= f.label :"住所" %><br />
+          <%= f.text_area :address %>
+        </div>
+
+        <div class="sign-up-field">
+          <%= f.label :"電話番号" %><br />
+          <%= f.text_field :telephone %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規登録" %>
+        </div>
+      <% end %>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div class="field">
-        <%= f.label :"メールアドレス" %><br />
-        <%= f.email_field :email %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"パスワード" %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %>文字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"パスワード(確認用)" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"ニックネーム(公開)" %><br />
-        <%= f.text_field :nickname %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"名前(未公開)" %><br />
-        <%= f.text_field :name %>
-      </div>
-      
-      <div class="field">
-        <%= f.label :"郵便番号" %><br />
-        <%= f.text_field :post_code %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"都道府県" %><br />
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {}) %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"住所" %><br />
-        <%= f.text_area :address %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"電話番号" %><br />
-        <%= f.text_field :telephone %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "新規登録" %>
-      </div>
-    <% end %>
   </div>
 </div>

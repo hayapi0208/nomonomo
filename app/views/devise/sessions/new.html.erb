@@ -1,31 +1,35 @@
-<div class="contents row">
-  <div class="sign-in-box">
-    <div class="sign-up-logo">
-      ログイン
-    </div>
-  </div>
-  <div class="container">
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <div class="field">
-        <%= f.label :"メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true %>
+<div class="sign-main">
+  <div class="sign-inner">
+    <div class="sign-in-box">
+      <div class="sign-in-logo">
+        ログイン
       </div>
+      <div class="container">
+      <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :"パスワード" %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
         <div class="field">
-          <%= f.label :"ログイン情報を保存する" %><br />
-          <%= f.check_box :remember_me %>
+          <%= f.label :"メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true %>
         </div>
-      <% end -%>
 
-      <div class="actions">
-        <%= f.submit "ログイン" %>
+        <div class="field">
+          <%= f.label :"パスワード" %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.label :"ログイン情報を保存する" %><br />
+            <%= f.check_box :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "ログイン" %>
+        </div>
+      <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
