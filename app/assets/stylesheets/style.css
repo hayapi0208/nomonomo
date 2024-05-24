@@ -233,3 +233,38 @@ footer {
 .form__text {
   width: 90%;
 }
+
+/*******************************************
+          投稿詳細画面
+********************************************/
+.show-main {
+  height: calc(100vh - 23vh);
+}
+
+.show-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.show-area {
+  margin: 5px auto;
+}
+
+.show-main-middle {
+  display: flex;
+  justify-content: left;
+  align-items: end;
+}
+
+.show-content {
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 20px;
+  margin-right: 50px;
+}
+
+.text {
+  width: 50vw;
+}

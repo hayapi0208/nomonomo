@@ -4,35 +4,35 @@
       <div class="show-image-area">
         <div class="post__image">
           <% if @post.image.attached? %>
-            <%= image_tag @post.image.variant(resize: '1000x200') %>
+            <%= image_tag @post.image.variant(resize: '500x200') %>
           <% end %>
         </div>
       </div>
       <div class="show-main-area">
-        <div class="show-hedding">
+        <div class="show-content">
           <%= @post.created_at %>
         </div>
       </div>
 
-      <div show-main-middle>
-        <div class="show-hedding">
+      <div class="show-main-middle">
+        <div class="show-content title">
           <%= @post.title %>
         </div>
 
-        <div class="show-hedding">
-          <%= @post.user.nickname %>
+        <div class="show-content">
+          <%= "#{@post.user.nickname}さん" %>
         </div>
       </div>
 
-      <div class="show-hedding">
+      <div class="show-content">
         <%= @post.prefecture.name %>
       </div>
 
-      <div class="show-hedding">
+      <div class="show-content">
         <%= @post.store %>
       </div>
 
-      <div class="show-hedding">
+      <div class="show-content text">
         <%= @post.text %>
       </div>
     </div>
