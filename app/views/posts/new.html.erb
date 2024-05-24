@@ -6,6 +6,8 @@
       </div>
       <div class="new-form-field">
       <%= form_with model: @post, local: true do |f| %>
+
+        <%= render 'shared/error_messages', model: f.object %>
         
         <div class="field">
           <%= f.label :image, "画像(任意)" %><br />
