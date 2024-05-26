@@ -253,6 +253,21 @@ footer {
   margin: 5px auto;
 }
 
+.show-image-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.post__btn {
+  margin-right: 50px;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  background-color: blanchedalmond;
+}
+
 .show-main-middle {
   display: flex;
   justify-content: left;

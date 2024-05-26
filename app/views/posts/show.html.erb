@@ -7,6 +7,14 @@
             <%= image_tag @post.image.variant(resize: '500x200') %>
           <% end %>
         </div>
+        <%# 投稿者とログインしているユーザーが同じであれば以下を表示する %>
+        <% if @post.user == current_user %>
+        <div class="post__manage">
+          <%= link_to "編集する", edit_post_path, class: :post__btn %>
+          <%= link_to "削除する", post_path(@post.id), data: { turbo_method: :delete }, class: :post__btn %>
+        </div>
+        <% end %>
+        <%# // 投稿者とログインしているユーザーが同じであれば上記を表示する %>
       </div>
       <div class="show-main-area">
         <div class="show-content">
