@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: nomonomo
+    env: ruby
+    buildCommand: "bundle install && yarn install && bundle exec rake assets:precompile"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
