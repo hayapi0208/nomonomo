@@ -8,11 +8,6 @@ body {
   background-color: rgb(239, 233, 233);
 }
 
-#map{
-  height:500px;      
-  width:100%;
-}
-
 .background {
   display: flex;
   flex-direction: column;
@@ -290,4 +285,33 @@ footer {
 
 .text {
   width: 50vw;
+}
+
+/*******************************************
+          探す画面
+********************************************/
+.map-main {
+  height: calc(100vh - 23vh);
+}
+
+.map-text {
+  height: calc(77vh - 550px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-share {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid ;
+  border-radius: 5px;
+}
+
+.share-btn {
+  margin: 5px;
+}
+
+#map{
+  height:550px;
+  width:100%;
 }
