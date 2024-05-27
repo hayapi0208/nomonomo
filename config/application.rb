@@ -7,7 +7,7 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 
 # dotenv-rails を読み込む
-Dotenv::Railtie.load
+Dotenv::Rails.load
 
 module Nomonomo
   class Application < Rails::Application
