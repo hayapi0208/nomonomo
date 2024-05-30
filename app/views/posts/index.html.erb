@@ -17,22 +17,27 @@
           <% @posts.each do |post| %>
             <a href="<%= post_path(post.id) %>" class="content-post-link">
               <div class="content-post">
-                <div class="content-high">
-                  <div class="content-upload">
-                    <%= post.created_at %>
+                <% if post.image.attached? %>
+                 <%= image_tag post.image.variant(resize: '500x200'), class: :back__image %>
+                <% end %>
+                <div class="content-post-inner">
+                  <div class="content-high">
+                    <div class="content-upload">
+                      <%= post.created_at %>
+                    </div>
                   </div>
-                </div>
-                <div class="content-middle">
-                  <div class="content-title">
-                    <%= post.title %>
+                  <div class="content-middle">
+                    <div class="content-title">
+                      <%= post.title %>
+                    </div>
+                    <div class="content-place">
+                      <%= post.prefecture.name %>
+                    </div>
                   </div>
-                  <div class="content-place">
-                    <%= post.prefecture.name %>
-                  </div>
-                </div>
-                <div class="content-low">
-                  <div class="content-text">
-                    <%= post.text %>
+                  <div class="content-low">
+                    <div class="content-text">
+                      <%= post.text %>
+                    </div>
                   </div>
                 </div>
               </div>
