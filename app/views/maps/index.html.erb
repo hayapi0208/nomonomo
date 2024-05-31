@@ -1,108 +1,110 @@
-<div class="map-search">
-	<input id="address" type="textbox" value="">
-	<input type="button" value="地図を検索" onclick="codeAddress()">
-</div>
+<div class="main">
+	<div class="map-search">
+		<input id="address" type="textbox" value="">
+		<input type="button" value="地図を検索" onclick="codeAddress()">
+	</div>
 
-<div id='map'></div>
+	<div id='map'></div>
 
-<style>
-	#map {
-		height: 400px;
-		width: 100%%;
+	<style>
+		#map {
+			height: 400px;
+			width: 100%%;
+		}
+	</style>
+
+	<script>
+		let map
+
+		const display = document.getElementById('display')
+
+		// mapの表示関数 
+		function initMap() {
+			geocoder = new google.maps.Geocoder()
+
+		// mapの初期位置, 縮尺を定義
+		map = new google.maps.Map(document.getElementById('map'), {
+				center: {
+					lat: 35.7038,
+					lng: 139.7083
+				},
+				zoom: 14,
+		});
+
+		// mapsテーブルにあるそれぞれのレコードをmap上に表示 
+		<% @maps.each do |m| %>
+			(function(){
+			let contentString = "住所：<%= m.address %>"; 
+
+			// マーカーを立てる
+			let marker = new google.maps.Marker({
+				position:{lat: <%= m.latitude %>, lng: <%= m.longitude %>},
+				map: map,
+				title: contentString
+			});
+
+			// 情報ウィンドウ(吹き出し)の定義
+			// 投稿の詳細ページへのリンクも
+			let infowindow = new google.maps.InfoWindow({
+			position: {lat: <%= m.latitude %>, lng: <%= m.longitude %>},
+			content: "<a href='<%= map_url(m.id) %>' target='_blank'><%= m.address %></a>"
+			});
+
+			// クリックしたときに情報ウィンドウを表示
+			marker.addListener('click', function() {
+			infowindow.open(map, marker);
+			});
+
+			})();
+		<% end %>
 	}
-</style>
 
-<script>
-	let map
+		let geocoder
 
-	const display = document.getElementById('display')
+		// 地図検索関数
+		function codeAddress() {
+			let inputAddress = document.getElementById('address').value;
 
-	// mapの表示関数 
-	function initMap() {
-		geocoder = new google.maps.Geocoder()
+			geocoder.geocode({
+				'address': inputAddress
+			}, function (results, status) {
+				if (status == 'OK') {
+					map.setCenter(results[0].geometry.location);
+					var marker = new google.maps.Marker({
+						map: map,
+						position: results[0].geometry.location
+					});
 
-	// mapの初期位置, 縮尺を定義
-	map = new google.maps.Map(document.getElementById('map'), {
-			center: {
-				lat: 35.7038,
-				lng: 139.7083
-			},
-			zoom: 14,
-	});
+				display.textContent = "検索結果：" + results[ 0 ].geometry.location
+				} else {
+					alert('該当する結果がありませんでした：' + status);
+					}
+			});
+		}
+	</script>
 
-	// mapsテーブルにあるそれぞれのレコードをmap上に表示 
-	<% @maps.each do |m| %>
-		(function(){
-		let contentString = "住所：<%= m.address %>"; 
+	<script
+			src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"  
+			async defer>
+	</script>
 
-		// マーカーを立てる
-		let marker = new google.maps.Marker({
-			position:{lat: <%= m.latitude %>, lng: <%= m.longitude %>},
-			map: map,
-			title: contentString
-		});
+	<div class="map-address">
+		<h3>場所投稿フォーム</h3>
+		<%= form_for(@map, :url => { controller:'maps', action:'create'})do |f| %>
+			<p>
+			<%= f.label :address %>
+			<%= f.text_field :address, size: "50x1" %>
+			</p>
+			<%= f.submit "送信"%>
+		<% end %>
 
-		// 情報ウィンドウ(吹き出し)の定義
-		// 投稿の詳細ページへのリンクも
-		let infowindow = new google.maps.InfoWindow({
-		position: {lat: <%= m.latitude %>, lng: <%= m.longitude %>},
-		content: "<a href='<%= map_url(m.id) %>' target='_blank'><%= m.address %></a>"
-		});
-
-		// クリックしたときに情報ウィンドウを表示
-		marker.addListener('click', function() {
-		infowindow.open(map, marker);
-		});
-
-		})();
-	<% end %>
-}
-
-	let geocoder
-
-	// 地図検索関数
-	function codeAddress() {
-		let inputAddress = document.getElementById('address').value;
-
-		geocoder.geocode({
-			'address': inputAddress
-		}, function (results, status) {
-			if (status == 'OK') {
-				map.setCenter(results[0].geometry.location);
-				var marker = new google.maps.Marker({
-					map: map,
-					position: results[0].geometry.location
-				});
-
-			display.textContent = "検索結果：" + results[ 0 ].geometry.location
-			} else {
-				alert('該当する結果がありませんでした：' + status);
-				}
-		});
-	}
-</script>
-
-<script
-		src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"  
-		async defer>
-</script>
-
-<div class="map-address">
-	<h3>場所投稿フォーム</h3>
-	<%= form_for(@map, :url => { controller:'maps', action:'create'})do |f| %>
-		<p>
-		<%= f.label :address %>
-		<%= f.text_field :address, size: "50x1" %>
-		</p>
-		<%= f.submit "送信"%>
-	<% end %>
-
-	<h3>場所一覧</h3>
-	<% @maps.each do |map| %>
-		<p>住所 : <%= map.address %></p>
-		<p>緯度 : <%= map.latitude %></p>
-		<p>経度 : <%= map.longitude %></p>
-		<p><%= link_to "削除する", map_path(map.id), data: { turbo_method: :delete } %></p>
-		<hr>
-	<% end %>
+		<h3>場所一覧</h3>
+		<% @maps.each do |map| %>
+			<p>住所 : <%= map.address %></p>
+			<p>緯度 : <%= map.latitude %></p>
+			<p>経度 : <%= map.longitude %></p>
+			<p><%= link_to "削除する", map_path(map.id), data: { turbo_method: :delete } %></p>
+			<hr>
+		<% end %>
+	</div>
 </div>
