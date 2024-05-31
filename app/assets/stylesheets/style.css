@@ -331,3 +331,15 @@ footer {
   height:550px;
   width:100%;
 }
+
+/*******************************************
+          地図画面
+********************************************/
+.map-search {
+  text-align: center;
+}
+
+.map-address {
+  text-align: center;
+  overflow: auto;
+}
