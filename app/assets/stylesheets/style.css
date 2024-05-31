@@ -6,12 +6,16 @@
   
 body {
   background-color: rgb(239, 233, 233);
+  min-height: 100vh;
 }
 
 .background {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 800px; /* PCでも一定の大きさを保つ */
+  margin: 0 auto;
 }
 /*******************************************
           ヘッダー
@@ -21,13 +25,9 @@ header {
   height: 15vh;background-color: rgb(243, 234, 156);
 }
 
-/* .header-area {
-  display: flex;
-  justify-content: space-between;
-} */
-
 .header-left {
-  padding-left:350px;
+  text-align: center;
+  margin-right: 20%;
 }
 
 .header-logo {
@@ -39,20 +39,28 @@ header {
 
 .header-right {
   display: flex;
-  justify-content: right;
-  padding-right: 350px;
+  justify-content: center;
   align-items: end;
+  
 }
 
 .signin-text {
   font-size: 20px;
   text-decoration: none;
   color: black;
+  margin-left: 20%;
 }
 
 .signup-text {
   font-size: 20px;
-  margin-left: 50px;
+  margin-left: 5%;
+  text-decoration: none;
+  color: black;
+}
+
+.post {
+  font-size: 20px;
+  margin-left: 3%;
   text-decoration: none;
   color: black;
 }
@@ -63,16 +71,9 @@ header {
   color: black;
 }
 
-.post {
-  font-size: 20px;
-  margin-left: 35px;
-  text-decoration: none;
-  color: black;
-}
-
 .logout {
   font-size: 20px;
-  margin-left: 35px;
+  margin-left: 3%;
   text-decoration: none;
   color: black;
 }
@@ -124,14 +125,14 @@ footer {
 }
 
 .search-btn{
-  width: 5vw;
-  height: 4.5vh;
+  width: 6.5vw;
+  height: 4vh;
 }
   
 /******** 投稿欄 ****************************/
 .contents-area {
   height: 100%;
-  padding: 15px 100px;
+  padding: 16px auto;
 }
 
 .content-post-link {
@@ -142,7 +143,7 @@ footer {
 
 .content-post {
   height: 30vh;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   background-color: white;
   border-radius: 10px;
   position: relative;
@@ -159,31 +160,34 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 20px;
+  padding: 2%;
 }
 
 
 .content-high {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .content-middle {
   display: flex;
   justify-content: left;
   align-items: end;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .content-title {
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .content-place {
-  margin-left: 150px;
+  margin-left: 5%;
 }
 
 .content-low {
+  height: 17vh;
+  width: 58vw;
   overflow: auto;
+  padding: 2%;
 }
 
 /*******************************************
@@ -191,6 +195,7 @@ footer {
 ********************************************/
 .sign-main {
   height: calc(100vh - 23vh);
+  overflow: auto;
 }
 
 .sign-inner {
@@ -199,28 +204,27 @@ footer {
 }
 
 .sign-in-box {
-  margin-top: 50px;
+  margin-top: 48px;
 }
 
 .sign-in-logo {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .sign-up-box {
-  margin-top: 5px;
-  overflow: auto;
+  margin-top: 8px;
 }
 
 .sign-up-logo {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .sign-up-field {
-  margin: 5px;
+  margin: 4px;
 }
 
 /*******************************************
@@ -236,17 +240,17 @@ footer {
 }
 
 .new-form-area {
-  margin-top: 50px;
+  margin-top: 48px;
 }
 
 .new-heading {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .field{
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .form__text {
@@ -258,6 +262,7 @@ footer {
 ********************************************/
 .show-main {
   height: calc(100vh - 23vh);
+  overflow: auto;
 }
 
 .show-inner {
@@ -266,7 +271,8 @@ footer {
 }
 
 .show-area {
-  margin: 5px auto;
+  margin: 8px auto;
+  width: 80%;
 }
 
 .show-image-area {
@@ -275,8 +281,16 @@ footer {
   align-items: end;
 }
 
+.post__image {
+  width: 240PX;
+}
+
+.post__manage {
+  width: calc(100% - 240px);
+}
+
 .post__btn {
-  margin-right: 50px;
+  margin-left: 4%;
   text-decoration: none;
   border: 1px solid black;
   border-radius: 5px;
@@ -291,7 +305,7 @@ footer {
 }
 
 .show-content {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .title {
@@ -300,7 +314,7 @@ footer {
 }
 
 .text {
-  width: 50vw;
+  max-width: 480px;
 }
 
 /*******************************************
@@ -324,7 +338,7 @@ footer {
 }
 
 .share-btn {
-  margin: 5px;
+  margin: 8px;
 }
 
 #map{
