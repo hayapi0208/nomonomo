@@ -5,7 +5,6 @@
 }
 
 body {
-  /* background-color: rgb(239, 233, 233); */
   min-height: 100vh;
   background-image: url('beer.jpg');
   background-repeat: no-repeat;
@@ -25,7 +24,6 @@ body {
 .main {
   height: calc(100vh - 23vh);
   overflow: auto;
-  background-color: rgb(235, 236, 228);
   background-color: rgba(232, 231, 197, 0.952);
 }
 /*******************************************
@@ -34,7 +32,6 @@ body {
 header {
   width: 100%;
   height: 15vh;
-  /* background-color: rgb(243, 234, 156); */
   background-color: rgba(252, 254, 210, 0.5);
 }
 
@@ -80,12 +77,6 @@ header {
 .post {
   font-size: 2.5vh;
   margin-left: 3%;
-  text-decoration: none;
-  color: black;
-}
-
-.user-nickname {
-  font-size: 2.5vh;
   text-decoration: none;
   color: black;
 }
