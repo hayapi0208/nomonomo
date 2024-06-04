@@ -216,6 +216,7 @@ footer {
 
 .sign-in-box {
   margin-top: 48px;
+  text-align: center;
 }
 
 .sign-in-logo {
@@ -226,6 +227,7 @@ footer {
 
 .sign-up-box {
   margin-top: 8px;
+  text-align: center;
 }
 
 .sign-up-logo {
@@ -238,6 +240,9 @@ footer {
   margin: 4px;
 }
 
+.actions {
+  margin: 16px;
+}
 /*******************************************
           新規投稿する画面
 ********************************************/
@@ -374,6 +379,12 @@ footer {
   height: 72px;
 }
 
+.history {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-decoration: underline;
+}
 /*******************************************
           人を探す画面
 ********************************************/

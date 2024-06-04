@@ -34,6 +34,11 @@
         </div>
 
         <div class="sign-up-field">
+          <%= f.label :"自己紹介(公開)" %><br />
+          <%= f.text_area :introduction %>
+        </div>
+
+        <div class="sign-up-field">
           <%= f.label :"名前(未公開)" %><br />
           <%= f.text_field :name %>
         </div>
@@ -50,7 +55,7 @@
 
         <div class="sign-up-field">
           <%= f.label :"住所" %><br />
-          <%= f.text_area :address %>
+          <%= f.text_field :address %>
         </div>
 
         <div class="sign-up-field">
