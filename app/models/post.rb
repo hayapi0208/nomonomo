@@ -13,7 +13,7 @@ class Post < ApplicationRecord
     if search.present?
       prefecture_id = Prefecture.find_by(name: search)&.id
       if prefecture_id.present?
-        Post.where(prefecture_id: prefecture_id)
+        Post.where(prefecture_id: prefecture_id).order('created_at DESC')
       else
         Post.where('title LIKE ? OR text LIKE ?', "%#{search}%", "%#{search}%").order('created_at DESC')
       end

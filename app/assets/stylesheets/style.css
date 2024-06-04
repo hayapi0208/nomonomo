@@ -187,10 +187,12 @@ footer {
   justify-content: left;
   align-items: end;
   margin-bottom: 8px;
+  width: 100%;
 }
 
 .content-title {
   font-size: 24px;
+  width: 70%;
 }
 
 .content-place {
