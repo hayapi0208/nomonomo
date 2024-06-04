@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :user
+  has_many :comments
   has_one_attached :image
 
   validates :title, presence: true
