@@ -1,12 +1,31 @@
 <div class="main">
-  <div class="show-inner">
-    <div class="show-area">
-      <div class="contents row">
-        <div><%= @user.nickname %>さんの投稿一覧</div>
+  <div class="mypage-inner">
+    <div class="mypage-area">
+      <div class="mypage-contents">
+        <div class="mypage-nickname">
+          <%= @user.nickname %>さんのマイページ
+        </div>
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <th class="table__col1">名前</th>
+              <td class="table__col2"><%= @user.nickname %></td>
+            </tr>
+            <tr>
+              <th class="table__col1">自己紹介</th>
+              <td class="table__col2"><%= @user.introduction %></td>
+            </tr>
+            <tr>
+              <th class="table__col1">都道府県</th>
+              <td class="table__col2"><%= @user.prefecture.name %></td>
+            </tr>
+          </tbody>
+        </table>
+
         <% @posts.each do |post| %>
-          <div class="content_post" style="background-image: url(<%= post.image %>);">
+          <div class="mypage_content" style="background-image: url(<%= post.image %>);">
             <div><%= post.text %></div>
-            <div><%= post.user.nickname %></div>
           </div>
         <% end %>
       </div>

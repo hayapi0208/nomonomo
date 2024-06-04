@@ -333,6 +333,48 @@ footer {
 }
 
 /*******************************************
+          マイページ画面
+********************************************/
+.mypage-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.mypage-area {
+  margin: 8px auto;
+  width: 80%;
+}
+
+
+.mypage-nickname {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  min-width: 50%;
+}
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+  width: 30%;
+  padding: 8px;
+}
+.table__col2{
+  text-align: left;
+  border: 1px solid #f5f5f5;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+  height: 72px;
+}
+
+/*******************************************
           人を探す画面
 ********************************************/
 .map-search {

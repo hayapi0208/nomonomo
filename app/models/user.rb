@@ -15,5 +15,6 @@ class User < ApplicationRecord
   validates :prefecture_id, presence: true, numericality: { other_than: 1 , message: "can't be blank"}
   validates :address, presence: true
   validates :telephone, presence: true
+  validates :introduction, presence: true
 
 end

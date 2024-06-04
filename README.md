@@ -7,6 +7,7 @@
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 | nickname           | string  | null: false               |
+| introduction       | text    | null: false               |
 | name               | string  | null: false               |
 | post_code          | string  | null: false               |
 | prefecture_id      | integer | null: false               |
