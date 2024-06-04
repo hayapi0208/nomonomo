@@ -267,6 +267,7 @@ footer {
 /*******************************************
           投稿詳細画面
 ********************************************/
+/************show部分***********************/
 .show-inner {
   display: flex;
   justify-content: center;
@@ -312,11 +313,23 @@ footer {
 
 .title {
   font-size: 20px;
+  font-weight: bold;
   margin-right: 50px;
 }
 
 .text {
   max-width: 480px;
+}
+
+/*************comment部分********************/
+.comment-area {
+  margin: 32px auto;
+  width: 80%; 
+}
+
+.comment-logo {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /*******************************************
