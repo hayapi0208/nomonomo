@@ -2,7 +2,7 @@
   <div class="show-inner">
     <div class="show-area">
       <div class="contents row">
-        <div><%= @nickname %>さんの投稿一覧</div>
+        <div><%= @user.nickname %>さんの投稿一覧</div>
         <% @posts.each do |post| %>
           <div class="content_post" style="background-image: url(<%= post.image %>);">
             <div><%= post.text %></div>
