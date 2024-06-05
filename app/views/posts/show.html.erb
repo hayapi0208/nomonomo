@@ -28,7 +28,7 @@
         </div>
 
         <div class="show-content">
-          <%= "#{@post.user.nickname}さん" %>
+          <%= link_to "#{@post.user.nickname}さん", "/users/#{@post.user_id}" %>
         </div>
       </div>
 
