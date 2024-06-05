@@ -18,7 +18,7 @@
             <a href="<%= post_path(post.id) %>" class="content-post-link">
               <div class="content-post">
                 <% if post.image.attached? %>
-                 <%= image_tag post.image.variant(resize: '500x200'), class: :back__image %>
+                 <%= image_tag post.image, class: :back__image %>
                 <% end %>
                 <div class="content-post-inner">
                   <div class="content-high">
