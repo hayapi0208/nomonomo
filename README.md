@@ -47,7 +47,7 @@ Basic認証
 [イメージ](https://gyazo.com/2ee12718dccdd07b3f1b499f8847b9fd)<br>
 [![Image from Gyazo](https://i.gyazo.com/2ee12718dccdd07b3f1b499f8847b9fd.jpg)](https://gyazo.com/2ee12718dccdd07b3f1b499f8847b9fd)
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/54cfafaae074b6e9a78e766d2b6af16e.png)](https://gyazo.com/54cfafaae074b6e9a78e766d2b6af16e)
+[![Image from Gyazo](https://i.gyazo.com/099859837a8d07a663048c4d1bd3b864.png)](https://gyazo.com/099859837a8d07a663048c4d1bd3b864)
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/a93b4e051a8e78b6e90e55fd7c38bf7b.png)](https://gyazo.com/a93b4e051a8e78b6e90e55fd7c38bf7b)
 # 開発環境
