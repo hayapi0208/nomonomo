@@ -9,7 +9,55 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <script src="https://maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&language=ja"></script>
+    <%# ↓↓位置情報機能↓↓ %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+    <script>
+      let map;
+      let marker;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: { lat: 35.7126958, lng: 139.7039899 },
+          zoom: 12
+        });
+      }
+
+      function handleLocationError(browserHasGeolocation, pos) {
+        console.log(browserHasGeolocation ?
+                    'Error: The Geolocation service failed.' :
+                    'Error: Your browser doesn\'t support geolocation.');
+      }
+
+      function placeMarker(position) {
+        if (marker) {
+          marker.setPosition(position);
+        } else {
+          marker = new google.maps.Marker({
+            position: position,
+            map: map
+          });
+        }
+        map.setCenter(position);
+      }
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            const pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            placeMarker(pos);
+          }, () => {
+            handleLocationError(true, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, map.getCenter());
+        }
+      }
+    </script>
+    <%# ↑↑位置情報機能↑↑ %>
   </head>
 
   <header>
