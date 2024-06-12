@@ -15,6 +15,11 @@
       let map;
       let marker;
 
+      document.addEventListener("turbo:load", function() {
+        // Google Mapsの初期化コードをここに記述します
+        initMap();
+      });
+
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: { lat: 35.7126958, lng: 139.7039899 },
