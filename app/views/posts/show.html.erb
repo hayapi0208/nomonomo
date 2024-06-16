@@ -37,7 +37,7 @@
       </div>
 
       <div class="show-content">
-        店舗URL：<%= link_to @post.store %>
+        店舗URL：<%= link_to @post.store, @post.store, rel: "noopener noreferrer", target: "_blank" %>
       </div>
 
       <div class="show-content text">
